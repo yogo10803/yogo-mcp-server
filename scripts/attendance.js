@@ -18,40 +18,6 @@ if (!url || !username || !password) {
   process.exit(2);
 }
 
-function parseAttendanceText(text) {
-  const raw = (text || '').replace(/\r/g, '').replace(/\t/g, ' ');
-  const lines = raw.split('\n').map(l => l.trim()).filter(Boolean);
-  const joined = lines.join(' ');
-
-  const entries = [];
-  const todayMatch = joined.match(/今日出勤紀錄\s*[:：]?\s*(\d{1,2}:\d{2})\s*[~\-–]\s*(\d{1,2}:\d{2})/i);
-  if (todayMatch) entries.push({ date: (new Date()).toISOString().slice(0,10), start: todayMatch[1], end: todayMatch[2], source: 'today-summary' });
-
-  const tokens = joined.split(/\s+/);
-  for (let i = 0; i < tokens.length; i++) {
-    if (/^\d{4}[\/\-]\d{1,2}[\/\-]\d{1,2}$/.test(tokens[i])) {
-      const date = tokens[i];
-      const times = [];
-      for (let j = i+1; j <= i+6 && j < tokens.length; j++) {
-        if (/^\d{1,2}:\d{2}$/.test(tokens[j])) times.push(tokens[j]);
-      }
-      if (times.length >= 2) entries.push({ date, start: times[0], end: times[1], source: 'candidate' });
-    }
-  }
-
-  const rangeRe = /(\d{1,2}:\d{2})\s*[~\-–]\s*(\d{1,2}:\d{2})/g;
-  let m;
-  while ((m = rangeRe.exec(joined)) !== null) entries.push({ date: null, start: m[1], end: m[2], source: 'range' });
-
-  const seen = new Set();
-  const out = [];
-  for (const e of entries) {
-    const key = `${e.date||''}|${e.start||''}|${e.end||''}`;
-    if (!seen.has(key)) { seen.add(key); out.push(e); }
-  }
-  return out;
-}
-
 // Parse punch.systex.com page text into structured entries (date ISO, start, end, location)
 function parsePunchText(text) {
   const lines = (text || '').split(/\r?\n/).map(l => l.trim()).filter(Boolean);

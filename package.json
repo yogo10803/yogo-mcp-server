@@ -20,9 +20,14 @@
   },
   "homepage": "https://github.com/yogo10803/yogo-mcp-server#readme",
   "devDependencies": {
-    "@playwright/mcp": "latest",
-    "playwright": "latest",
+    "@modelcontextprotocol/sdk": "^1.20.1",
+    "@modelcontextprotocol/server-puppeteer": "^2025.5.12",
+    "@modelcontextprotocol/server-sequential-thinking": "^2025.7.1",
+    "@playwright/mcp": "^0.0.43",
+    "@upstash/context7-mcp": "^1.0.21",
     "dotenv": "latest",
-    "mcp-client": "latest"
+    "mcp-client": "^1.13.1",
+    "mcp-deepwiki": "^0.0.10",
+    "playwright": "^1.57.0-alpha-2025-10-16"
   }
 }

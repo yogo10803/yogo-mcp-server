@@ -33,6 +33,56 @@
 				"browser_tabs",
 				"browser_wait_for"
 			]
+		},
+		"context7": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"@upstash/context7-mcp"
+			],
+			"env": {
+				"DEFAULT_MINIMUM_TOKENS": ""
+			},
+			"alwaysAllow": [
+				"resolve-library-id",
+				"get-library-docs"
+			]
+		},
+		"mcp-deepwiki": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"mcp-deepwiki@latest"
+			],
+			"alwaysAllow": [
+				"deepwiki_fetch"
+			]
+		},
+		"sequentialthinking": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"@modelcontextprotocol/server-sequential-thinking"
+			],
+			"alwaysAllow": [
+				"sequentialthinking"
+			]
+		},
+		"puppeteer": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"@modelcontextprotocol/server-puppeteer"
+			],
+			"alwaysAllow": [
+				"puppeteer_navigate",
+				"puppeteer_screenshot",
+				"puppeteer_click",
+				"puppeteer_fill",
+				"puppeteer_select",
+				"puppeteer_hover",
+				"puppeteer_evaluate"
+			]
 		}
 	},
 	"inputs": []
