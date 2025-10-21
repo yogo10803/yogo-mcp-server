@@ -1,0 +1,28 @@
+{
+  "name": "yogo-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP server",
+  "main": "index.js",
+  "scripts": {
+    "start:playwright": "npx @playwright/mcp@latest",
+    "start:all": "node start-all.js",
+    "attendance": "node scripts/attendance.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yogo10803/yogo-mcp-server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yogo10803/yogo-mcp-server/issues"
+  },
+  "homepage": "https://github.com/yogo10803/yogo-mcp-server#readme",
+  "devDependencies": {
+    "@playwright/mcp": "latest",
+    "playwright": "latest",
+    "dotenv": "latest",
+    "mcp-client": "latest"
+  }
+}
