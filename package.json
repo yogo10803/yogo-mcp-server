@@ -7,7 +7,7 @@
   "scripts": {
     "start:playwright": "npx @playwright/mcp@latest",
     "start:all": "node start-all.cjs",
-    "attendance": "node scripts/attendance.js"
+    "attendance": "node scripts/attendance.cjs"
   },
   "repository": {
     "type": "git",
