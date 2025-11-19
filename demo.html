@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playwright 截圖示範</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        h1 {
+            font-size: 3em;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .content {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        .feature {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+        }
+        .feature h2 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎭 Playwright 自動化測試</h1>
+    <div class="content">
+        <div class="feature">
+            <h2>✅ 功能展示</h2>
+            <p>這是一個使用 Playwright 截圖的範例頁面</p>
+        </div>
+        <div class="feature">
+            <h2>🚀 特色</h2>
+            <ul>
+                <li>瀏覽器自動化</li>
+                <li>螢幕截圖功能</li>
+                <li>完整頁面或部分截圖</li>
+                <li>支援多種瀏覽器</li>
+            </ul>
+        </div>
+        <div class="feature">
+            <h2>📊 時間</h2>
+            <p id="time">載入中...</p>
+        </div>
+    </div>
+    <script>
+        document.getElementById('time').textContent = new Date().toLocaleString('zh-TW');
+    </script>
+</body>
+</html>
