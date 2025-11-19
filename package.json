@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "MCP server",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start:playwright": "npx @playwright/mcp@latest",
-    "start:all": "node start-all.js",
+    "start:all": "node start-all.cjs",
     "attendance": "node scripts/attendance.js"
   },
   "repository": {
@@ -29,5 +30,8 @@
     "mcp-client": "^1.13.1",
     "mcp-deepwiki": "^0.0.10",
     "playwright": "^1.57.0-alpha-2025-10-16"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
   }
 }
