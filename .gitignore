@@ -1,4 +1,6 @@
 node_modules/
 .env
+work-log/.env
 .pids/*
 logs/*
+.pm2

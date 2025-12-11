@@ -29,7 +29,8 @@
     "dotenv": "latest",
     "mcp-client": "^1.13.1",
     "mcp-deepwiki": "^0.0.10",
-    "playwright": "^1.57.0-alpha-2025-10-16"
+    "playwright": "^1.57.0-alpha-2025-10-16",
+    "pm2": "^5.4.3"
   },
   "dependencies": {
     "node-fetch": "^3.3.2"
